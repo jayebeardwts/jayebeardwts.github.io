@@ -348,4 +348,16 @@ footer a:hover {
   footer {
     padding: 26px 20px;
   }
+}.storefront-preview {
+  background: #292929;
+  overflow: hidden;
+  aspect-ratio: auto;
 }
+
+.storefront-preview img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
