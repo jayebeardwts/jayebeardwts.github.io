@@ -3,341 +3,676 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>Jaye Beard | E-Commerce & Shopify Portfolio</title>
-
-  <meta
-    name="description"
-    content="Portfolio of Jaye Beard — e-commerce, Shopify, web operations, digital merchandising, and marketplace operations."
-  >
-
+  <title>Jaye Beard | E-Commerce &amp; Shopify Portfolio</title>
+  <meta name="description" content="Portfolio of Jaye Beard — e-commerce, Shopify, web operations, digital merchandising, and AI workflow experimentation.">
   <link rel="stylesheet" href="style.css">
+
+  <style>
+    /* Additional styles are included here so only index.html needs replacing. */
+    .skip-link {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      z-index: 10;
+      padding: 10px 16px;
+      background: var(--ink);
+      color: var(--paper);
+      transform: translateY(-200%);
+    }
+
+    .skip-link:focus {
+      transform: translateY(0);
+    }
+
+    a:focus-visible,
+    summary:focus-visible {
+      outline: 3px solid var(--accent);
+      outline-offset: 5px;
+    }
+
+    .site-header {
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .project-featured > * {
+      min-width: 0;
+    }
+
+    .storefront-preview {
+      aspect-ratio: auto;
+      max-height: none;
+      background: transparent;
+    }
+
+    .storefront-preview img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    .agent-project {
+      background: var(--paper);
+    }
+
+    .agent-project h3 {
+      font-size: clamp(28px, 3.1vw, 42px);
+      line-height: 1.12;
+      letter-spacing: -0.025em;
+    }
+
+    .status-badge {
+      display: inline-block;
+      margin: 0 0 18px;
+      padding: 5px 10px;
+      border: 1px solid var(--accent);
+      color: var(--accent);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .agent-project .project-note {
+      margin-bottom: 0;
+      font-style: normal;
+    }
+
+    .workflow-panel {
+      padding: 26px;
+      background: var(--accent);
+      color: var(--paper);
+    }
+
+    .workflow-panel h4 {
+      margin: 0 0 22px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 26px;
+      font-weight: 400;
+      line-height: 1.15;
+    }
+
+    .workflow-steps {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      counter-reset: workflow-step;
+    }
+
+    .workflow-steps li {
+      position: relative;
+      margin: 0 0 13px;
+      padding: 0 0 13px 34px;
+      border-bottom: 1px solid rgba(243, 239, 230, 0.25);
+      counter-increment: workflow-step;
+    }
+
+    .workflow-steps li::before {
+      position: absolute;
+      top: 2px;
+      left: 0;
+      content: counter(workflow-step, decimal-leading-zero);
+      font-size: 11px;
+      font-weight: 700;
+    }
+
+    .workflow-steps li:last-child {
+      margin-bottom: 0;
+      padding-bottom: 0;
+      border-bottom: 0;
+    }
+
+    .workflow-steps strong {
+      display: block;
+      font-size: 14px;
+      line-height: 1.4;
+    }
+
+    .workflow-steps span {
+      display: block;
+      margin-top: 3px;
+      font-size: 12px;
+      line-height: 1.5;
+    }
+
+    .case-study {
+      grid-column: 1 / -1;
+      padding-top: 20px;
+      border-top: 1px solid var(--line);
+    }
+
+    .case-study summary {
+      padding: 8px 0;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .case-study summary::marker {
+      color: var(--accent);
+    }
+
+    .case-study-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 28px 36px;
+      margin-top: 26px;
+    }
+
+    .case-study h4 {
+      margin: 0 0 10px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 23px;
+      font-weight: 400;
+      line-height: 1.25;
+    }
+
+    .case-study p,
+    .case-study li {
+      font-size: 15px;
+    }
+
+    .case-study p {
+      margin: 0 0 12px;
+    }
+
+    .case-study ul {
+      margin: 0;
+      padding-left: 20px;
+    }
+
+    .case-study li + li {
+      margin-top: 8px;
+    }
+
+    .case-study .source-note {
+      margin: 26px 0 0;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    @media (max-width: 749px) {
+      .agent-project {
+        gap: 26px;
+      }
+
+      .workflow-panel {
+        padding: 24px;
+      }
+
+      .case-study-grid {
+        grid-template-columns: 1fr;
+      }
+
+      nav {
+        flex-wrap: wrap;
+        gap: 12px 18px;
+      }
+
+      nav a:nth-child(2),
+      nav a:nth-child(3) {
+        display: inline;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+    }
+  </style>
 </head>
 
 <body>
+  <a class="skip-link" href="#top">Skip to content</a>
 
-<header class="site-header">
-  <a class="logo" href="#top">JAYE BEARD</a>
+  <header class="site-header">
+    <a class="logo" href="#top">JAYE BEARD</a>
 
-  <nav>
-    <a href="#work">Work</a>
-    <a href="#skills">Skills</a>
-    <a href="#about">About</a>
-    <a href="mailto:jaye.beard@whatthesleuth.com">Contact</a>
-  </nav>
-</header>
+    <nav aria-label="Main navigation">
+      <a href="#work">Work</a>
+      <a href="#skills">Skills</a>
+      <a href="#about">About</a>
+      <a href="mailto:jaye.beard@whatthesleuth.com">Contact</a>
+    </nav>
+  </header>
 
+  <main id="top">
 
-<main id="top">
+    <!-- HERO -->
 
-  <!-- HERO -->
-
-  <section class="hero">
-
-    <p class="eyebrow">
-      LOS ANGELES • E-COMMERCE & WEB OPERATIONS
-    </p>
-
-    <h1>
-      I build the digital store people arrive at.
-    </h1>
-
-    <p class="hero-copy">
-      I'm Jaye Beard, an e-commerce and operations professional
-      with hands-on experience managing Shopify storefronts,
-      digital merchandising, product catalogs, marketplace
-      operations, promotions, and customer-facing web experiences.
-    </p>
-
-    <div class="hero-buttons">
-
-      <a class="button primary" href="#work">
-        View selected work
-      </a>
-
-      <a
-        class="button secondary"
-        href="mailto:jaye.beard@whatthesleuth.com"
-      >
-        Email me
-      </a>
-
-    </div>
-
-  </section>
-
-
-  <!-- WORK -->
-
-  <section class="section" id="work">
-
-    <div class="section-heading">
-
+    <section class="hero">
       <p class="eyebrow">
-        SELECTED WORK
+        LOS ANGELES • E-COMMERCE &amp; WEB OPERATIONS
       </p>
 
-      <h2>
-        Commerce, merchandising & web projects
-      </h2>
+      <h1>I build the digital store people arrive at.</h1>
 
-    </div>
+      <p class="hero-copy">
+        I'm Jaye Beard, an e-commerce and operations professional with hands-on
+        experience managing Shopify storefronts, digital merchandising, product
+        catalogs, marketplace operations, promotions, and customer-facing web experiences.
+      </p>
 
-
-    <!-- WHAT THE SLEUTH -->
-
-    <article class="project project-featured">
-
-      <div class="project-content">
-
-        <p class="project-type">
-          SHOPIFY • E-COMMERCE OPERATIONS • MERCHANDISING
-        </p>
-
-        <h3>What the Sleuth!?</h3>
-
-        <p>
-          An independent Los Angeles mystery bookstore built and
-          managed across Shopify and online marketplaces.
-        </p>
-
-        <p>
-          My work includes storefront development, product and
-          collection merchandising, catalog and inventory
-          operations, promotional campaigns, marketplace
-          workflows, and ongoing site improvements.
-        </p>
-
-        <div class="tags">
-          <span>Shopify</span>
-          <span>Liquid</span>
-          <span>HTML/CSS</span>
-          <span>Merchandising</span>
-          <span>Amazon</span>
-          <span>Inventory</span>
-          <span>Email</span>
-          <span>Site QA</span>
-        </div>
-
-        <a
-          class="project-link"
-          href="https://whatthesleuth.com"
-          target="_blank"
-          rel="noopener"
-        >
-          Visit live store →
+      <div class="hero-buttons">
+        <a class="button primary" href="#work">
+          View selected work
         </a>
 
+        <a class="button secondary" href="mailto:jaye.beard@whatthesleuth.com">
+          Email me
+        </a>
+      </div>
+    </section>
+
+    <!-- SELECTED WORK -->
+
+    <section class="section" id="work" aria-labelledby="work-title">
+      <div class="section-heading">
+        <p class="eyebrow">SELECTED WORK</p>
+        <h2 id="work-title">Commerce, merchandising &amp; web projects</h2>
       </div>
 
+      <!-- FEATURED PROJECT 1: WHAT THE SLEUTH -->
 
-      <div class="project-visual">
-        <div class="project-visual storefront-preview">
-  <img
-    src="what-the-sleuth.png"
-  alt="What the Sleuth!? Shopify storefront showing the homepage and Currently Under Investigation merchandising collection"
-  >
-</div>
-      </div>
+      <article class="project project-featured" aria-labelledby="wts-title">
+        <div class="project-content">
+          <p class="project-type">
+            SHOPIFY • E-COMMERCE OPERATIONS • MERCHANDISING
+          </p>
 
-    </article>
+          <h3 id="wts-title">What the Sleuth!?</h3>
 
+          <p>
+            An independent Los Angeles mystery bookstore built and managed across
+            Shopify and online marketplaces.
+          </p>
 
-    <!-- SECONDARY PROJECTS -->
+          <p>
+            My work includes storefront development, product and collection
+            merchandising, catalog and inventory operations, promotional campaigns,
+            marketplace workflows, and ongoing site improvements.
+          </p>
 
-    <div class="project-grid">
+          <div class="tags" aria-label="Project tools and skills">
+            <span>Shopify</span>
+            <span>Liquid</span>
+            <span>HTML/CSS</span>
+            <span>Merchandising</span>
+            <span>Amazon</span>
+            <span>Inventory</span>
+            <span>Email</span>
+            <span>Site QA</span>
+          </div>
 
-      <article class="project">
-
-        <p class="project-type">
-          WEB DESIGN • FRONT-END
-        </p>
-
-        <h3>Juniper & Ash</h3>
-
-        <p>
-          A portfolio web project focused on clean visual
-          hierarchy, responsive layout, brand presentation,
-          and a polished customer-facing experience.
-        </p>
-
-        <div class="tags">
-          <span>HTML</span>
-          <span>CSS</span>
-          <span>Responsive Design</span>
-          <span>GitHub Pages</span>
-        </div>
-
-        <p class="project-note">
           <a
-  class="project-link"
-  href="https://jayebeardwts.github.io/juniper-and-ash/"
-  target="_blank"
-  rel="noopener"
->
-  View live project →
-</a>
-        </p>
-
-      </article>
-
-
-      <article class="project">
-
-        <p class="project-type">
-          WEB DESIGN • SERVICE BUSINESS
-        </p>
-
-        <h3>Bark & Bloom</h3>
-
-        <p>
-          A service-business website concept designed around
-          clear navigation, approachable branding, service
-          discovery, and responsive presentation.
-        </p>
-
-        <div class="tags">
-          <span>HTML</span>
-          <span>CSS</span>
-          <span>UX</span>
-          <span>GitHub Pages</span>
+            class="project-link"
+            href="https://whatthesleuth.com"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Visit live store →
+          </a>
         </div>
 
-        <p class="project-note">
-        
-<a
-  class="project-link"
-  href="https://jayebeardwts.github.io/bark-and-bloom-grooming/"
-  target="_blank"
-  rel="noopener"
->
-  View live project →
-</a>
-
-
-    
-    </p>
-
+        <div class="project-visual storefront-preview">
+          <img
+            src="wts%20storefront.png"
+            loading="lazy"
+            decoding="async"
+            alt="What the Sleuth!? Shopify storefront showing the homepage and Currently Under Investigation merchandising collection"
+          >
+        </div>
       </article>
 
-    </div>
+      <!-- FEATURED PROJECT 2: AI WORKFLOW -->
 
-  </section>
+      <article
+        class="project project-featured agent-project"
+        id="ai-workflow"
+        aria-labelledby="agent-title"
+      >
+        <div class="project-content">
+          <p class="status-badge">Development-store prototype</p>
 
+          <p class="project-type">
+            AI WORKFLOWS • SHOPIFY • HUMAN REVIEW
+          </p>
 
-  <!-- SKILLS -->
+          <h3 id="agent-title">Shopify × ClickUp AI Product Workflow</h3>
 
-  <section class="section skills-section" id="skills">
+          <p>
+            A learning experiment exploring how an e-commerce team could turn a
+            ClickUp request into an AI-assisted product-description proposal,
+            with validation and human approval built into the process.
+          </p>
 
-    <div>
+          <p>
+            I directed and tested this Codex-assisted project, focusing on accurate
+            product matching, reviewable copy, and clear control over when an
+            approved change reaches an external system.
+          </p>
 
-      <p class="eyebrow">
-        CAPABILITIES
+          <div class="tags" aria-label="Project tools and skills">
+            <span>TypeScript</span>
+            <span>Node.js</span>
+            <span>OpenAI Agents SDK</span>
+            <span>Shopify API</span>
+            <span>ClickUp API</span>
+            <span>Validation</span>
+            <span>Human Approval</span>
+          </div>
+
+          <p class="project-note">
+            Experimental workflow with saved reviews, controlled ClickUp handoffs,
+            and a separately authorized description update for one draft development product.
+          </p>
+
+          <!-- Add a real Loom walkthrough link here when a video is available. -->
+        </div>
+
+        <aside class="workflow-panel" aria-labelledby="workflow-title">
+          <h4 id="workflow-title">From request to reviewed change</h4>
+
+          <ol class="workflow-steps" role="list">
+            <li>
+              <strong>Select a task</strong>
+              <span>Start with a ClickUp development request.</span>
+            </li>
+
+            <li>
+              <strong>Match the product</strong>
+              <span>Use the explicit Shopify product ID.</span>
+            </li>
+
+            <li>
+              <strong>Draft a description</strong>
+              <span>Generate proposed copy and a reason.</span>
+            </li>
+
+            <li>
+              <strong>Validate the proposal</strong>
+              <span>Check structure and supported product claims.</span>
+            </li>
+
+            <li>
+              <strong>Record human review</strong>
+              <span>Approve or reject the exact saved text.</span>
+            </li>
+
+            <li>
+              <strong>Confirm the handoff</strong>
+              <span>Send an approved comment to the original ClickUp task.</span>
+            </li>
+
+            <li>
+              <strong>Authorize a Shopify update</strong>
+              <span>Separate confirmation; one draft product, description only.</span>
+            </li>
+          </ol>
+        </aside>
+
+        <details class="case-study" id="ai-case-study">
+          <summary>Read the project case study</summary>
+
+          <div class="case-study-grid">
+            <section aria-labelledby="case-problem">
+              <h4 id="case-problem">The e-commerce problem</h4>
+
+              <p>
+                Product-copy requests involve several decisions: identifying the
+                right item, preserving its facts, checking the proposed wording,
+                and making sure the approved version is the one delivered.
+              </p>
+
+              <p>
+                This experiment explores how AI can help with drafting while
+                giving the operator clear checkpoints for those decisions.
+              </p>
+            </section>
+
+            <section aria-labelledby="case-role">
+              <h4 id="case-role">My role</h4>
+
+              <p>
+                I used my Shopify operations experience to define the workflow,
+                direct implementation with Codex, work through testing, and refine
+                the review and handoff steps.
+              </p>
+
+              <p>
+                My focus was practical: what information the operator needs to
+                review, what should block a change, and how to handle an uncertain result.
+              </p>
+            </section>
+
+            <section aria-labelledby="case-implementation">
+              <h4 id="case-implementation">What the prototype implements</h4>
+
+              <ul>
+                <li>
+                  Explicit product-ID matching and mock or opt-in AI description generation.
+                </li>
+                <li>
+                  Saved proposals with the original copy, proposed copy, reason,
+                  and review decision.
+                </li>
+                <li>
+                  A confirmed comment handoff to the original ClickUp task.
+                </li>
+                <li>
+                  A separate command to update only the description of one
+                  approved draft development product.
+                </li>
+              </ul>
+            </section>
+
+            <section aria-labelledby="case-safeguards">
+              <h4 id="case-safeguards">Safeguards built into the flow</h4>
+
+              <ul>
+                <li>
+                  New proposals start pending and require an explicit human decision.
+                </li>
+                <li>
+                  AI output passes schema checks and checks for selected unsupported
+                  product claims, with at most one corrective revision.
+                </li>
+                <li>
+                  Source data is checked again before delivery or a product update.
+                </li>
+                <li>
+                  Delivery receipts help block duplicates; uncertain outcomes require
+                  read-only reconciliation instead of an automatic resend.
+                </li>
+              </ul>
+            </section>
+
+            <section aria-labelledby="case-tools">
+              <h4 id="case-tools">Tools and implementation</h4>
+
+              <p>
+                TypeScript and Node.js provide the command-line workflow.
+                The OpenAI Agents SDK supports optional AI generation, Zod validates
+                structured data, and separate Shopify and ClickUp adapters handle
+                the explicitly enabled integrations.
+              </p>
+
+              <p>
+                Vitest tests use simulated service responses to exercise validation,
+                approval states, changed source data, delivery failures, and recovery checks.
+              </p>
+            </section>
+
+            <section aria-labelledby="case-results">
+              <h4 id="case-results">Results and current scope</h4>
+
+              <p>
+                The implemented workflow connects drafting, saved human review,
+                ClickUp delivery, and a separately confirmed development-store
+                description update. It makes the approval boundaries visible at each step.
+              </p>
+
+              <p>
+                This remains a development-store learning project with local review
+                records. Reviewer labels are not authenticated accounts, and the
+                factual checks have limited coverage. Human verification remains
+                essential. Production reliability, time savings, and sales impact
+                have not been established.
+              </p>
+            </section>
+          </div>
+
+          <p class="source-note">
+            Source code is private. This case study summarizes the implementation
+            and its current scope.
+          </p>
+        </details>
+      </article>
+
+      <!-- ADDITIONAL PROJECTS -->
+
+      <div class="project-grid">
+        <article class="project" aria-labelledby="juniper-title">
+          <p class="project-type">WEB DESIGN • FRONT-END</p>
+
+          <h3 id="juniper-title">Juniper &amp; Ash</h3>
+
+          <p>
+            A portfolio web project focused on clean visual hierarchy, responsive
+            layout, brand presentation, and a polished customer-facing experience.
+          </p>
+
+          <div class="tags" aria-label="Project tools and skills">
+            <span>HTML</span>
+            <span>CSS</span>
+            <span>Responsive Design</span>
+            <span>GitHub Pages</span>
+          </div>
+
+          <p class="project-note">
+            <a
+              class="project-link"
+              href="https://jayebeardwts.github.io/juniper-and-ash/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              View live project →
+            </a>
+          </p>
+        </article>
+
+        <article class="project" aria-labelledby="bark-title">
+          <p class="project-type">WEB DESIGN • SERVICE BUSINESS</p>
+
+          <h3 id="bark-title">Bark &amp; Bloom</h3>
+
+          <p>
+            A service-business website concept designed around clear navigation,
+            approachable branding, service discovery, and responsive presentation.
+          </p>
+
+          <div class="tags" aria-label="Project tools and skills">
+            <span>HTML</span>
+            <span>CSS</span>
+            <span>UX</span>
+            <span>GitHub Pages</span>
+          </div>
+
+          <p class="project-note">
+            <a
+              class="project-link"
+              href="https://jayebeardwts.github.io/bark-and-bloom-grooming/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              View live project →
+            </a>
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+
+    <section
+      class="section skills-section"
+      id="skills"
+      aria-labelledby="skills-title"
+    >
+      <div>
+        <p class="eyebrow">CAPABILITIES</p>
+        <h2 id="skills-title">Where I'm strongest</h2>
+      </div>
+
+      <div class="skill-list">
+        <article>
+          <h3>E-Commerce</h3>
+
+          <p>
+            Shopify storefront management, product merchandising, collections,
+            catalog maintenance, inventory, promotions, marketplace operations,
+            and customer experience.
+          </p>
+        </article>
+
+        <article>
+          <h3>Web</h3>
+
+          <p>
+            Shopify Liquid, theme customization, Custom Liquid blocks, HTML/CSS,
+            product metafields, responsive layouts, content updates, and site QA.
+          </p>
+        </article>
+
+        <article>
+          <h3>Operations</h3>
+
+          <p>
+            Inventory documentation, order and fulfillment workflows, spreadsheets,
+            cross-functional coordination, marketplace replenishment, and process improvement.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+
+    <section
+      class="section about"
+      id="about"
+      aria-labelledby="about-title"
+    >
+      <p class="eyebrow">ABOUT</p>
+
+      <h2 id="about-title">Part storefront builder, part operator.</h2>
+
+      <p class="about-copy">
+        I enjoy the systems behind a strong online shopping experience: organizing
+        products, improving storefronts, maintaining accurate information, building
+        merchandising experiences, and making the operational pieces work together.
       </p>
 
-      <h2>
-        Where I'm strongest
-      </h2>
+      <p class="about-copy">
+        I'm currently pursuing e-commerce, Shopify, web operations, merchandising,
+        and related coordinator opportunities in the Los Angeles area.
+      </p>
 
-    </div>
+      <a class="project-link" href="mailto:jaye.beard@whatthesleuth.com">
+        jaye.beard@whatthesleuth.com →
+      </a>
+    </section>
+  </main>
 
-
-    <div class="skill-list">
-
-      <article>
-
-        <h3>E-Commerce</h3>
-
-        <p>
-          Shopify storefront management, product merchandising,
-          collections, catalog maintenance, inventory, promotions,
-          marketplace operations, and customer experience.
-        </p>
-
-      </article>
-
-
-      <article>
-
-        <h3>Web</h3>
-
-        <p>
-          Shopify Liquid, theme customization, Custom Liquid
-          blocks, HTML/CSS, product metafields, responsive
-          layouts, content updates, and site QA.
-        </p>
-
-      </article>
-
-
-      <article>
-
-        <h3>Operations</h3>
-
-        <p>
-          Inventory documentation, order and fulfillment
-          workflows, spreadsheets, cross-functional coordination,
-          marketplace replenishment, and process improvement.
-        </p>
-
-      </article>
-
-    </div>
-
-  </section>
-
-
-  <!-- ABOUT -->
-
-  <section class="section about" id="about">
-
-    <p class="eyebrow">
-      ABOUT
-    </p>
-
-    <h2>
-      Part storefront builder, part operator.
-    </h2>
-
-    <p class="about-copy">
-      I enjoy the systems behind a strong online shopping
-      experience: organizing products, improving storefronts,
-      maintaining accurate information, building merchandising
-      experiences, and making the operational pieces work
-      together.
-    </p>
-
-    <p class="about-copy">
-      I'm currently pursuing e-commerce, Shopify, web operations,
-      merchandising, and related coordinator opportunities in
-      the Los Angeles area.
-    </p>
+  <footer>
+    <span>© 2026 Jaye Beard</span>
 
     <a
-      class="project-link"
-      href="mailto:jaye.beard@whatthesleuth.com"
+      href="https://github.com/jayebeardwts"
+      target="_blank"
+      rel="noopener noreferrer"
     >
-      jaye.beard@whatthesleuth.com →
+      GitHub
     </a>
-
-  </section>
-
-</main>
-
-
-<footer>
-
-  <span>© 2026 Jaye Beard</span>
-
-  <a
-    href="https://github.com/jayebeardwts"
-    target="_blank"
-    rel="noopener"
-  >
-    GitHub
-  </a>
-
-</footer>
-
+  </footer>
 </body>
 </html>
