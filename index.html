@@ -6,1026 +6,474 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#f3efe6">
 
-  <title>Jaye Beard | E-Commerce Operations, Shopify &amp; Workflow Automation</title>
-
-  <meta
-    name="description"
-    content="Jaye Beard's portfolio: Shopify and e-commerce operations, digital systems, web updates, and AI-assisted workflow automation. Featuring a Shopify and ClickUp agent experiment."
-  >
-
+  <title>Jaye Beard | E-Commerce Operations, Shopify &amp; AI Workflows</title>
+  <meta name="description" content="Jaye Beard's portfolio: Shopify and e-commerce operations, merchandising, Amazon FBA, web systems, and AI-assisted workflows. Featuring Verity, a human-reviewed book-listing prototype, and a Shopify–ClickUp development experiment.">
   <link rel="stylesheet" href="style.css">
 
   <style>
-    /* Additional styles live here so only index.html needs replacing. */
-
+    /* This update remains self-contained: the repository's style.css is unchanged. */
     .skip-link {
-      position: absolute;
-      top: 12px;
-      left: 12px;
-      z-index: 10;
-      padding: 10px 16px;
-      background: var(--ink);
-      color: var(--paper);
+      position: absolute; top: 12px; left: 12px; z-index: 10;
+      padding: 10px 16px; background: var(--ink); color: var(--paper);
       transform: translateY(-200%);
     }
-
-    .skip-link:focus {
-      transform: translateY(0);
+    .skip-link:focus { transform: translateY(0); }
+    a:focus-visible, summary:focus-visible {
+      outline: 3px solid #277c62; outline-offset: 5px;
     }
+    .site-header { flex-wrap: wrap; gap: 16px; }
+    .project-featured > * { min-width: 0; }
+    .storefront-preview { aspect-ratio: auto; max-height: none; background: transparent; }
+    .storefront-preview img { display: block; width: 100%; height: auto; }
 
-    a:focus-visible,
-    summary:focus-visible {
-      outline: 3px solid var(--accent);
-      outline-offset: 5px;
+    /* Verity: gentle jade highlights without changing the wider portfolio palette. */
+    .verity-project { background: var(--paper); }
+    .verity-project h3 {
+      font-size: clamp(32px, 3.4vw, 48px);
+      line-height: 1.1; letter-spacing: -0.025em;
     }
-
-    .site-header {
-      flex-wrap: wrap;
-      gap: 16px;
-    }
-
-    .project-featured > * {
-      min-width: 0;
-    }
-
-    .storefront-preview {
-      aspect-ratio: auto;
-      max-height: none;
-      background: transparent;
-    }
-
-    .storefront-preview img {
-      display: block;
-      width: 100%;
-      height: auto;
-    }
-
-    /* AI Workflow Project */
-
-    .agent-project {
-      background: var(--paper);
-    }
-
-    .agent-project h3 {
-      font-size: clamp(28px, 3.1vw, 42px);
-      line-height: 1.12;
-      letter-spacing: -0.025em;
-    }
-
     .status-badge {
-      display: inline-block;
-      margin: 0 0 18px;
-      padding: 5px 10px;
-      border: 1px solid var(--accent);
-      color: var(--accent);
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 0.08em;
+      display: inline-block; margin: 0 0 17px; padding: 6px 11px;
+      border: 1px solid #277c62; color: #205d49; background: #e7f3eb;
+      font-size: 11px; font-weight: 700; letter-spacing: 0.07em;
       text-transform: uppercase;
     }
-
-    .agent-project .project-note {
-      margin-bottom: 0;
-      font-style: normal;
+    .verity-project > .project-content { grid-column: 1 / -1; }
+    .verity-project .project-note { margin-bottom: 0; font-style: normal; }
+    .verity-project .tags span { border-color: #c3d8c9; }
+    .verity-intro { max-width: 790px; }
+    .verity-gallery {
+      grid-column: 1 / -1;
+      display: grid; grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 20px; margin-top: 0;
     }
-
-    /* Video Walkthrough */
-
-    .video-cta {
-      display: flex;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin: 24px 0 14px;
+    .verity-gallery figure {
+      min-width: 0; margin: 0; background: #fbfcfb;
+      border: 1px solid #c6d8cc;
     }
-
-    .video-button {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      background: var(--accent) !important;
-      color: var(--paper) !important;
-      border-color: var(--accent) !important;
+    .verity-gallery a {
+      display: block; padding: 12px;
+      background: #f2f8f4;
     }
-
-    .video-button:hover {
-      opacity: 0.85;
+    .verity-gallery a:hover { background: #e5f2e9; }
+    .verity-gallery img {
+      display: block; width: 100%; height: auto; max-height: 370px;
+      object-fit: contain; background: #fff; border: 1px solid #d9e5dd;
     }
-
-    .video-meta {
-      color: var(--muted);
-      font-size: 13px;
+    .verity-gallery figcaption {
+      padding: 12px 16px 15px; color: #455a50;
+      font-size: 13px; line-height: 1.5;
     }
-
-    /* Workflow Diagram */
-
+    .verity-gallery figcaption strong { display: block; color: #203c30; }
+    .screenshot-note {
+      grid-column: 1 / -1; margin: -6px 0 0;
+      color: var(--muted); font-size: 12px;
+    }
     .workflow-panel {
-      padding: 26px;
-      background: var(--accent);
-      color: var(--paper);
+      grid-column: 1 / -1; padding: 27px 30px;
+      background: #23624e; color: #fff;
     }
-
     .workflow-panel h4 {
-      margin: 0 0 22px;
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: 26px;
-      font-weight: 400;
-      line-height: 1.15;
+      margin: 0 0 19px; font-family: Georgia, "Times New Roman", serif;
+      font-size: 26px; font-weight: 400; line-height: 1.2;
     }
-
     .workflow-steps {
-      margin: 0;
-      padding: 0;
-      list-style: none;
-      counter-reset: workflow-step;
+      margin: 0; padding: 0; list-style: none; counter-reset: workflow-step;
+      display: grid; grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px 28px;
     }
-
     .workflow-steps li {
-      position: relative;
-      margin: 0 0 13px;
-      padding: 0 0 13px 34px;
-      border-bottom: 1px solid rgba(243, 239, 230, 0.25);
+      position: relative; padding: 0 0 12px 35px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.23);
       counter-increment: workflow-step;
     }
-
     .workflow-steps li::before {
-      position: absolute;
-      top: 2px;
-      left: 0;
       content: counter(workflow-step, decimal-leading-zero);
-      font-size: 11px;
-      font-weight: 700;
+      position: absolute; top: 2px; left: 0;
+      color: #d6f3e1; font-size: 11px; font-weight: 700;
     }
+    .workflow-steps strong { display: block; font-size: 14px; line-height: 1.4; }
+    .workflow-steps span { display: block; margin-top: 3px; font-size: 12px; line-height: 1.6; }
+    .workflow-note { margin: 18px 0 0; font-size: 12px; color: #e1f4e8; }
 
-    .workflow-steps li:last-child {
-      margin-bottom: 0;
-      padding-bottom: 0;
-      border-bottom: 0;
+    .earlier-workflow {
+      grid-column: 1 / -1; background: #e7eee8;
+      border-left: 4px solid #32795f; padding: 18px 22px;
     }
-
-    .workflow-steps strong {
-      display: block;
-      font-size: 14px;
-      line-height: 1.4;
+    .earlier-workflow h4 {
+      margin: 0 0 8px; font-family: Georgia, "Times New Roman", serif;
+      font-size: 23px; font-weight: 400;
     }
-
-    .workflow-steps span {
-      display: block;
-      margin-top: 3px;
-      font-size: 12px;
-      line-height: 1.5;
+    .earlier-workflow p { margin: 0 0 12px; font-size: 15px; }
+    .video-cta { display: flex; align-items: center; flex-wrap: wrap; gap: 12px; }
+    .video-button {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: #23624e !important; color: #fff !important;
+      border: 1px solid #23624e !important;
     }
-
-    /* Case Study */
+    .video-button:hover { opacity: 0.86; }
+    .video-meta { color: var(--muted); font-size: 13px; }
 
     .case-study {
-      grid-column: 1 / -1;
-      padding-top: 20px;
+      grid-column: 1 / -1; padding-top: 18px;
       border-top: 1px solid var(--line);
     }
-
-    .case-study summary {
-      padding: 8px 0;
-      font-weight: 700;
-      cursor: pointer;
-    }
-
-    .case-study summary::marker {
-      color: var(--accent);
-    }
-
+    .case-study summary { padding: 9px 0; font-weight: 700; cursor: pointer; }
+    .case-study summary::marker { color: #23624e; }
     .case-study-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 28px 36px;
-      margin-top: 26px;
+      display: grid; grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 24px 35px; margin-top: 24px;
     }
-
+    .case-study-grid > section { min-width: 0; }
     .case-study h4 {
-      margin: 0 0 10px;
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: 23px;
-      font-weight: 400;
-      line-height: 1.25;
+      margin: 0 0 10px; font-family: Georgia, "Times New Roman", serif;
+      font-size: 23px; font-weight: 400; line-height: 1.25;
     }
-
-    .case-study p,
-    .case-study li {
-      font-size: 15px;
-    }
-
-    .case-study p {
-      margin: 0 0 12px;
-    }
-
-    .case-study ul {
-      margin: 0;
-      padding-left: 20px;
-    }
-
-    .case-study li + li {
-      margin-top: 8px;
-    }
-
+    .case-study p, .case-study li { font-size: 15px; }
+    .case-study p { margin: 0 0 12px; }
+    .case-study ul { margin: 0; padding-left: 20px; }
+    .case-study li + li { margin-top: 8px; }
     .case-study .source-note {
-      margin: 26px 0 0;
-      color: var(--muted);
-      font-size: 13px;
+      margin: 23px 0 0; color: var(--muted); font-size: 13px;
     }
-
-    /* Hero */
-
-    .hero-highlight {
-      margin: 22px 0 0;
-      font-size: 14px;
-    }
-
+    .hero-highlight { margin: 22px 0 0; font-size: 14px; }
     .hero-highlight a {
-      color: var(--accent);
-      font-weight: 700;
-      text-underline-offset: 3px;
+      color: #205d49; font-weight: 700; text-underline-offset: 3px;
     }
-
-    /* Mobile */
-
     @media (max-width: 749px) {
-      .agent-project {
-        gap: 26px;
-      }
-
-      .workflow-panel {
-        padding: 24px;
-      }
-
-      .case-study-grid {
-        grid-template-columns: 1fr;
-      }
-
-      nav {
-        flex-wrap: wrap;
-        gap: 12px 18px;
-      }
-
-      nav a:nth-child(2),
-      nav a:nth-child(3) {
-        display: inline;
-      }
-
-      .video-cta {
-        align-items: flex-start;
-      }
+      .verity-project { gap: 26px; }
+      .verity-gallery, .workflow-steps, .case-study-grid { grid-template-columns: 1fr; }
+      .workflow-panel { padding: 23px; }
+      .earlier-workflow { padding: 17px; }
+      nav { flex-wrap: wrap; gap: 12px 18px; }
+      nav a:nth-child(2), nav a:nth-child(3) { display: inline; }
+      .verity-gallery img { max-height: none; }
+      .video-cta { align-items: flex-start; }
     }
-
     @media (prefers-reduced-motion: reduce) {
-      html {
-        scroll-behavior: auto;
-      }
+      html { scroll-behavior: auto; }
     }
   </style>
 </head>
-
 <body>
-
-  <a class="skip-link" href="#top">
-    Skip to content
-  </a>
-
-  <!-- HEADER -->
+  <a class="skip-link" href="#top">Skip to content</a>
 
   <header class="site-header">
-    <a class="logo" href="#top">
-      JAYE BEARD
-    </a>
-
+    <a class="logo" href="#top">JAYE BEARD</a>
     <nav aria-label="Main navigation">
       <a href="#work">Work</a>
       <a href="#skills">Skills</a>
       <a href="#about">About</a>
-      <a href="mailto:jaye.beard@whatthesleuth.com">
-        Contact
-      </a>
+      <a href="mailto:jaye.beard@whatthesleuth.com">Contact</a>
     </nav>
   </header>
 
   <main id="top">
-
-    <!-- INTRODUCTION -->
-
     <section class="hero" aria-labelledby="hero-title">
-
-      <p class="eyebrow">
-        LOS ANGELES &bull; E-COMMERCE SYSTEMS &bull; DIGITAL OPERATIONS
-      </p>
-
-      <h1 id="hero-title">
-        I make e-commerce systems work better.
-      </h1>
-
+      <p class="eyebrow">LOS ANGELES &bull; E-COMMERCE OPERATIONS &bull; AI-ASSISTED WORKFLOWS</p>
+      <h1 id="hero-title">I make e-commerce systems work better.</h1>
       <p class="hero-copy">
-        Hi, I'm Jaye! I work in Shopify and e-commerce operations,
-        from storefront updates and product catalogs to the systems
-        that keep everything running.
-
-        Lately, I've been exploring AI-assisted workflows and ways
-        to make everyday tasks easier, more accurate, and easier to manage.
+        Hi, I'm Jaye! My work spans Shopify storefront updates, product catalogs,
+        merchandising, marketplace operations, and the details that keep online
+        stores organized. I'm also building practical AI-assisted workflows that
+        make product information easier to research, review, and manage&mdash;without
+        losing human oversight.
       </p>
-
       <div class="hero-buttons">
-        <a class="button primary" href="#work">
-          View selected work
-        </a>
-
-        <a class="button secondary" href="#ai-workflow">
-          See my AI workflow
-        </a>
+        <a class="button primary" href="#work">View selected work</a>
+        <a class="button secondary" href="#ai-workflow">Explore Verity</a>
       </div>
-
       <p class="hero-highlight">
-        Interested in the process?
-        <a href="#ai-case-study" id="case-study-jump">
-          Read my Shopify &times; ClickUp case study &rarr;
-        </a>
+        Curious about the build?
+        <a href="#ai-case-study" id="case-study-jump">Read the Verity case study &rarr;</a>
       </p>
-
     </section>
 
-    <!-- SELECTED WORK -->
-
-    <section
-      class="section"
-      id="work"
-      aria-labelledby="work-title"
-    >
-
+    <section class="section" id="work" aria-labelledby="work-title">
       <div class="section-heading">
-        <p class="eyebrow">
-          SELECTED WORK
-        </p>
-
-        <h2 id="work-title">
-          Shopify, digital operations &amp; connected workflows
-        </h2>
+        <p class="eyebrow">SELECTED WORK</p>
+        <h2 id="work-title">Shopify operations &amp; practical AI workflows</h2>
       </div>
 
-      <!-- PROJECT 1: WHAT THE SLEUTH!? -->
-
-      <article
-        class="project project-featured"
-        aria-labelledby="wts-title"
-      >
-
+      <!-- E-commerce operations: real bookstore work. -->
+      <article class="project project-featured" aria-labelledby="wts-title">
         <div class="project-content">
-
-          <p class="project-type">
-            SHOPIFY &bull; E-COMMERCE OPERATIONS &bull; MERCHANDISING
-          </p>
-
-          <h3 id="wts-title">
-            What the Sleuth!?
-          </h3>
-
+          <p class="project-type">SHOPIFY &bull; E-COMMERCE OPERATIONS &bull; MERCHANDISING</p>
+          <h3 id="wts-title">What the Sleuth!?</h3>
           <p>
-            An independent Los Angeles mystery bookstore where
-            I manage the practical side of e-commerce: storefront
-            work, product information, marketplace operations,
-            and the details that keep an online store running.
+            An independent Los Angeles mystery bookstore where I manage the
+            practical side of e-commerce: storefront updates, product information,
+            marketplace operations, and the details that keep an online store running.
           </p>
-
           <p>
-            My work includes Shopify Liquid and HTML/CSS updates,
-            catalog and collection merchandising, product metafields,
-            inventory coordination, Amazon FBA workflows, promotional
-            campaigns, email, and site QA.
+            My work includes Shopify Liquid and HTML/CSS updates, catalog and
+            collection merchandising, product metafields, inventory coordination,
+            Amazon FBA workflows, promotional campaigns, email, and site QA.
           </p>
-
-          <div class="tags" aria-label="Project tools and skills">
-            <span>Shopify</span>
-            <span>Liquid</span>
-            <span>HTML/CSS</span>
-            <span>Catalog Operations</span>
-            <span>Amazon FBA</span>
-            <span>Merchandising</span>
-            <span>Marketing</span>
-            <span>Site QA</span>
+          <div class="tags" aria-label="What the Sleuth skills">
+            <span>Shopify</span><span>Liquid</span><span>HTML/CSS</span>
+            <span>Catalog Operations</span><span>Amazon FBA</span>
+            <span>Merchandising</span><span>Marketing Operations</span><span>Site QA</span>
           </div>
-
-          <a
-            class="project-link"
-            href="https://whatthesleuth.com"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Visit live store &rarr;
-          </a>
-
+          <a class="project-link" href="https://whatthesleuth.com" target="_blank" rel="noopener noreferrer">Visit live store &rarr;</a>
         </div>
-
         <div class="project-visual storefront-preview">
-          <img
-            src="wts%20storefront.png"
-            loading="lazy"
-            decoding="async"
-            alt="What the Sleuth!? Shopify homepage and product merchandising"
-          >
+          <img src="wts%20storefront.png" loading="lazy" decoding="async" alt="What the Sleuth!? Shopify homepage and product merchandising">
         </div>
-
       </article>
 
-      <!-- PROJECT 2: SHOPIFY AND CLICKUP AI WORKFLOW -->
-
-      <article
-        class="project project-featured agent-project"
-        id="ai-workflow"
-        aria-labelledby="agent-title"
-      >
-
-        <div class="project-content">
-
-          <p class="status-badge">
-            Development-store prototype
-          </p>
-
-          <p class="project-type">
-            AI WORKFLOWS &bull; SHOPIFY &bull; CLICKUP &bull; HUMAN REVIEW
-          </p>
-
-          <h3 id="agent-title">
-            Shopify &times; ClickUp AI Product Workflow
-          </h3>
-
+      <!-- Verity: the primary AI case study, with the ClickUp work retained below as an earlier phase. -->
+      <article class="project project-featured verity-project" id="ai-workflow" aria-labelledby="verity-title">
+        <div class="project-content verity-intro">
+          <p class="status-badge">Working local prototype &bull; Active development</p>
+          <p class="project-type">E-COMMERCE SYSTEMS &bull; AI-ASSISTED BOOK LISTINGS &bull; HUMAN REVIEW</p>
+          <h3 id="verity-title">Verity</h3>
           <p>
-            I wanted to see how AI could help with Shopify
-            product-description requests without losing track
-            of the right product, its facts, or the person
-            approving the change.
+            Verity is an e-commerce operations project I'm developing to make
+            book-listing work more manageable. It connects the practical problems
+            of catalog accuracy, source research, and product copy with a clear
+            process for reviewing suggested changes before they're accepted.
           </p>
-
           <p>
-            With Codex assistance, I designed and tested a workflow
-            that starts with a ClickUp task, prepares a reviewable
-            description proposal, records a human decision, and
-            sends an approved handoff back to ClickUp.
-
-            It also supports a separately confirmed description
-            update to one draft product in a Shopify development store.
+            Its existing workflows can look up books by title, author, or ISBN;
+            compare editions; preserve selected-source information; and prepare
+            local listing drafts with optional AI-assisted research and copy.
+            The Hello Verity browser interface lets me inspect evidence, compare
+            alternatives, and explicitly accept or reject suggestions. Confirmed
+            decisions are saved locally with revision history.
           </p>
-
-          <!-- VIDEO WALKTHROUGH -->
-
-          <div class="video-cta">
-
-            <a
-              class="button primary video-button"
-              href="https://share.descript.com/view/WBXsP8fv5tE"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Watch my Shopify and ClickUp AI workflow video walkthrough, opens in a new tab"
-            >
-              &#9654; Watch the Video Walkthrough
-            </a>
-
-            <span class="video-meta">
-              4 min 52 sec &bull; Descript
-            </span>
-
+          <p>
+            I helped shape the experience around real e-commerce tasks: compact
+            review screens, understandable source information, and safeguards
+            that prevent an outdated browser window from overwriting a newer decision.
+          </p>
+          <div class="tags" aria-label="Verity project technologies and skills">
+            <span>Shopify Operations</span><span>AI-Assisted Metadata</span>
+            <span>TypeScript / Node.js</span><span>Book Catalogs</span>
+            <span>Source Evidence</span><span>Human Review</span>
+            <span>Workflow QA</span><span>Codex</span>
           </div>
-
-          <!-- END VIDEO WALKTHROUGH -->
-
-          <div class="tags" aria-label="Project tools and skills">
-            <span>Shopify API</span>
-            <span>ClickUp API</span>
-            <span>AI-Assisted Automation</span>
-            <span>TypeScript / Node.js</span>
-            <span>Codex</span>
-            <span>Workflow Testing</span>
-            <span>Human Approval</span>
-          </div>
-
           <p class="project-note">
-            A hands-on learning project with documented limits.
-            Production-store access, approvals directly inside ClickUp,
-            and feedback-driven revisions from ClickUp comments
-            are not part of the current prototype.
+            Verity is a local prototype, not a production-deployed Shopify app.
+            Its browser review saves decisions locally; it does not publish book
+            listings or update a live store.
           </p>
-
         </div>
 
-        <!-- WORKFLOW DIAGRAM -->
+        <div class="verity-gallery" aria-label="Verity interface screenshots">
+          <figure>
+            <a href="jade-listings.png" target="_blank" rel="noopener noreferrer" aria-label="Open full-size Verity book listings screenshot in a new tab">
+              <img src="jade-listings.png" loading="lazy" decoding="async" alt="Hello Verity in jade green, showing a saved-book listings screen using demonstration records">
+            </a>
+            <figcaption><strong>Browse saved book listings</strong> Compact cards and clear review priorities. Select to view the full image.</figcaption>
+          </figure>
+          <figure>
+            <a href="review-alternatives.png" target="_blank" rel="noopener noreferrer" aria-label="Open full-size Verity review alternatives screenshot in a new tab">
+              <img src="review-alternatives.png" loading="lazy" decoding="async" alt="Hello Verity book review interface, showing an expanded field, suggested alternatives, and local review controls">
+            </a>
+            <figcaption><strong>Inspect and review alternatives</strong> Source-backed suggestions and local decisions in one interface. Select to view the full image.</figcaption>
+          </figure>
+          <p class="screenshot-note">Screenshots show authored demonstration records, not production customer data or new independent bibliographic verification.</p>
+        </div>
 
-        <aside
-          class="workflow-panel"
-          aria-labelledby="workflow-title"
-        >
-
-          <h4 id="workflow-title">
-            From request to reviewed change
-          </h4>
-
+        <aside class="workflow-panel" aria-labelledby="workflow-title">
+          <h4 id="workflow-title">From book lookup to a reviewed listing</h4>
           <ol class="workflow-steps" role="list">
-
-            <li>
-              <strong>Start with ClickUp</strong>
-              <span>
-                Select a specific development task and its writing request.
-              </span>
-            </li>
-
-            <li>
-              <strong>Find the Shopify product</strong>
-              <span>
-                Match the exact product ID; don't guess by title.
-              </span>
-            </li>
-
-            <li>
-              <strong>Generate a proposal</strong>
-              <span>
-                Suggest a description using the retrieved product facts.
-              </span>
-            </li>
-
-            <li>
-              <strong>Check the content</strong>
-              <span>
-                Validate the response and flag selected unsupported claims.
-              </span>
-            </li>
-
-            <li>
-              <strong>Review the exact text</strong>
-              <span>
-                Save the proposal and explicitly approve or reject it locally.
-              </span>
-            </li>
-
-            <li>
-              <strong>Send the ClickUp handoff</strong>
-              <span>
-                Confirm a comment to the original task and record its outcome.
-              </span>
-            </li>
-
-            <li>
-              <strong>Confirm the Shopify update</strong>
-              <span>
-                Separate authorization for one draft product, description only.
-              </span>
-            </li>
-
+            <li><strong>Find the book</strong><span>Search by title, author, or ISBN in the existing operator workflow.</span></li>
+            <li><strong>Select the edition</strong><span>Compare available matches and save the selected preview without silently changing its identity.</span></li>
+            <li><strong>Prepare suggested content</strong><span>Research available metadata and prepare description or SEO suggestions, with AI only when explicitly requested.</span></li>
+            <li><strong>Inspect supporting evidence</strong><span>See the retained source, its limitations, and whether it describes the work or a specific edition.</span></li>
+            <li><strong>Review alternatives</strong><span>Use Hello Verity to expand fields, inspect choices, and stage Accept or Reject decisions.</span></li>
+            <li><strong>Save decisions locally</strong><span>Review the proposed changes, confirm one local save, and preserve earlier revisions.</span></li>
           </ol>
-
+          <p class="workflow-note">Lookup and AI enrichment are existing operator-run workflows; the browser currently handles saved-listing review. Nothing in this sequence automatically publishes to Shopify.</p>
         </aside>
 
-        <!-- AI PROJECT CASE STUDY -->
+        <section class="earlier-workflow" aria-labelledby="clickup-title">
+          <h4 id="clickup-title">Where it started: Shopify &times; ClickUp</h4>
+          <p>
+            The earlier development experiment connected a ClickUp writing request
+            to an exact Shopify development-store product, generated reviewable
+            product copy, recorded local approval, and supported a separately
+            confirmed ClickUp handoff and limited draft-product update.
+            That foundation grew into a wider set of Verity workflows.
+          </p>
+          <div class="video-cta">
+            <a class="button primary video-button" href="https://share.descript.com/view/WBXsP8fv5tE" target="_blank" rel="noopener noreferrer" aria-label="Watch the earlier Shopify and ClickUp development workflow demonstration in a new tab">&#9654; Watch the earlier ClickUp demo</a>
+            <span class="video-meta">4 min 52 sec &bull; Descript &bull; Earlier project phase</span>
+          </div>
+        </section>
 
         <details class="case-study" id="ai-case-study">
-
-          <summary>
-            Read the project case study
-          </summary>
-
+          <summary>Read the Verity project case study</summary>
           <div class="case-study-grid">
-
             <section aria-labelledby="case-problem">
-
-              <h4 id="case-problem">
-                Why I built it
-              </h4>
-
+              <h4 id="case-problem">The problem</h4>
               <p>
-                Product-description updates can involve more than
-                writing new copy.
-
-                Someone needs to find the right item, check the facts,
-                review the wording, and make sure the approved version
-                is the one delivered.
+                Listing a book online can involve edition matching, inconsistent
+                metadata, descriptions, SEO fields, and decisions about what
+                information is trustworthy enough to use.
               </p>
-
               <p>
-                I wanted to explore where AI could help
-                without skipping those steps.
+                I wanted to explore how AI could help with the preparation work
+                without removing the need for source checks and human judgment.
               </p>
-
             </section>
-
             <section aria-labelledby="case-role">
-
-              <h4 id="case-role">
-                My role
-              </h4>
-
+              <h4 id="case-role">My role</h4>
               <p>
-                I brought my Shopify operations experience into
-                the project: defining requirements, directing
-                implementation with Codex, testing the workflow,
-                and refining the approval and handoff steps.
+                I defined the e-commerce problems, shaped feature requirements,
+                directed iterative implementation with Codex, reviewed proposed
+                workflows, and tested the application on Windows.
               </p>
-
               <p>
-                I focused on the practical questions: what does
-                the reviewer need to see, what should stop an
-                update, and what happens if a request fails?
+                Much of my focus was on usability: helping someone understand the
+                evidence, compare alternatives, and save decisions without needing
+                to interpret technical records or command-line output.
               </p>
-
             </section>
-
             <section aria-labelledby="case-implementation">
-
-              <h4 id="case-implementation">
-                What works today
-              </h4>
-
+              <h4 id="case-implementation">What works today</h4>
               <ul>
-
-                <li>
-                  Read-only matching between a development ClickUp
-                  task and the correct Shopify product ID.
-                </li>
-
-                <li>
-                  Mock or opt-in AI description generation,
-                  with saved proposed text and a clear explanation.
-                </li>
-
-                <li>
-                  Local human approval or rejection tied to
-                  the exact saved proposal.
-                </li>
-
-                <li>
-                  Separately confirmed delivery of the approved
-                  proposal as a ClickUp task comment.
-                </li>
-
-                <li>
-                  A controlled, description-only update for
-                  one draft development-store product.
-                </li>
-
+                <li>Book lookup, edition comparison, and saved listing previews.</li>
+                <li>Optional AI-assisted preparation of book metadata, descriptions, and SEO suggestions.</li>
+                <li>Retained evidence with work-level versus edition-level distinctions and visible gaps.</li>
+                <li>A local browser interface with compact field accordions and reviewable alternatives.</li>
+                <li>Staged Accept/Reject decisions, explicit confirmation, and persistent local revision history.</li>
+                <li>Separate earlier Shopify development-store and ClickUp proposal/handoff workflows.</li>
               </ul>
-
             </section>
-
             <section aria-labelledby="case-safeguards">
-
-              <h4 id="case-safeguards">
-                Safeguards and testing
-              </h4>
-
+              <h4 id="case-safeguards">Safeguards and testing</h4>
               <ul>
-
-                <li>
-                  New proposals always begin pending;
-                  generating text never approves it.
-                </li>
-
-                <li>
-                  Validation looks for selected unsupported product
-                  details, with at most one corrective AI revision.
-                </li>
-
-                <li>
-                  Fresh source checks help catch changes between
-                  approval, handoff, and update.
-                </li>
-
-                <li>
-                  Delivery and update receipts block repeat attempts;
-                  uncertain results require reconciliation.
-                </li>
-
-                <li>
-                  Offline tests use simulated service responses,
-                  and real writes are limited to the development environment.
-                </li>
-
+                <li>Accepting content locally does not independently verify it or publish it to Shopify.</li>
+                <li>Source provenance, selected-edition identity, prior decisions, and rejected alternatives are retained.</li>
+                <li>Fingerprint checks help prevent stale browser windows from overwriting newer saved work.</li>
+                <li>Native Windows testing exercised local saves, reopening decisions, and a stale-window rejection.</li>
+                <li>Offline test fixtures and browser smoke checks are separate from live external-provider validation.</li>
               </ul>
-
             </section>
-
             <section aria-labelledby="case-tools">
-
-              <h4 id="case-tools">
-                Tools and approach
-              </h4>
-
+              <h4 id="case-tools">Tools and approach</h4>
               <p>
-                The prototype uses TypeScript, Node.js,
-                the OpenAI Agents SDK, Shopify and ClickUp APIs,
-                and Zod for structured validation.
-
-                Vitest exercises the workflow with simulated
-                service responses.
+                The project uses TypeScript, Node.js, structured validation,
+                local file persistence, and opt-in AI workflows. Earlier development
+                integrations include Shopify and ClickUp APIs.
               </p>
-
               <p>
-                The code was developed with Codex assistance.
-                My contribution was translating e-commerce needs
-                into requirements, reviewing the implementation,
-                testing the behavior, and deciding how the system
-                should handle approvals and failures.
+                Implementation has been built with Codex assistance. I have
+                directed requirements, evaluated tradeoffs, tested functionality,
+                and refined how the operator experience should work.
               </p>
-
             </section>
-
             <section aria-labelledby="case-next">
-
-              <h4 id="case-next">
-                Where I'd take it next
-              </h4>
-
+              <h4 id="case-next">Where I'm taking it</h4>
               <p>
-                I'd like to bring review and feedback directly
-                into ClickUp so someone could request a revision
-                without switching to the local app.
-
-                I could also see the approach supporting Shopify
-                theme tasks and, eventually, content platforms
-                such as Storyblok, Sanity, and Craft.
+                Next steps include editing saved suggestions directly in the
+                browser and adding a conversation interface that uses the same
+                reviewed records and workflows. Broader catalog and website
+                maintenance features are also part of the longer-term vision.
               </p>
-
               <p>
-                Those are ideas for future work, not completed features.
-                The current prototype still requires operator review
-                and is not a production system.
+                These are planned capabilities, not a claim that Verity is
+                conversational, cloud-hosted, or managing a production store today.
               </p>
-
             </section>
-
           </div>
-
           <p class="source-note">
-            The source repository is private. This case study
-            describes a development experiment, not a production
-            deployment or a measured business result.
+            The project repository is private. Screenshots use disposable demo
+            fixtures. This case study documents a locally tested development
+            project, not a production deployment or measured sales improvement.
           </p>
-
         </details>
-
       </article>
 
-      <!-- ADDITIONAL WEB PROJECTS -->
-
       <div class="project-grid">
-
-        <!-- JUNIPER & ASH -->
-
-        <article
-          class="project"
-          aria-labelledby="juniper-title"
-        >
-
-          <p class="project-type">
-            WEB DESIGN &bull; FRONT-END
-          </p>
-
-          <h3 id="juniper-title">
-            Juniper &amp; Ash
-          </h3>
-
-          <p>
-            A portfolio web project exploring clear layouts,
-            responsive design, and a polished customer-facing experience.
-          </p>
-
-          <div class="tags" aria-label="Project tools and skills">
-            <span>HTML</span>
-            <span>CSS</span>
-            <span>Responsive Design</span>
-            <span>GitHub Pages</span>
+        <article class="project" aria-labelledby="juniper-title">
+          <p class="project-type">WEB DESIGN &bull; FRONT-END</p>
+          <h3 id="juniper-title">Juniper &amp; Ash</h3>
+          <p>A portfolio web project exploring clear layouts, responsive design, and a polished customer-facing experience.</p>
+          <div class="tags" aria-label="Juniper and Ash skills">
+            <span>HTML</span><span>CSS</span><span>Responsive Design</span><span>GitHub Pages</span>
           </div>
-
-          <p class="project-note">
-            <a
-              class="project-link"
-              href="https://jayebeardwts.github.io/juniper-and-ash/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              View live project &rarr;
-            </a>
-          </p>
-
+          <p class="project-note"><a class="project-link" href="https://jayebeardwts.github.io/juniper-and-ash/" target="_blank" rel="noopener noreferrer">View live project &rarr;</a></p>
         </article>
-
-        <!-- BARK & BLOOM -->
-
-        <article
-          class="project"
-          aria-labelledby="bark-title"
-        >
-
-          <p class="project-type">
-            WEB DESIGN &bull; SERVICE BUSINESS
-          </p>
-
-          <h3 id="bark-title">
-            Bark &amp; Bloom
-          </h3>
-
-          <p>
-            A service-business website concept with approachable
-            branding, easy-to-follow navigation, and responsive presentation.
-          </p>
-
-          <div class="tags" aria-label="Project tools and skills">
-            <span>HTML</span>
-            <span>CSS</span>
-            <span>UX</span>
-            <span>GitHub Pages</span>
+        <article class="project" aria-labelledby="bark-title">
+          <p class="project-type">WEB DESIGN &bull; SERVICE BUSINESS</p>
+          <h3 id="bark-title">Bark &amp; Bloom</h3>
+          <p>A service-business website concept with approachable branding, easy-to-follow navigation, and responsive presentation.</p>
+          <div class="tags" aria-label="Bark and Bloom skills">
+            <span>HTML</span><span>CSS</span><span>UX</span><span>GitHub Pages</span>
           </div>
-
-          <p class="project-note">
-            <a
-              class="project-link"
-              href="https://jayebeardwts.github.io/bark-and-bloom-grooming/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              View live project &rarr;
-            </a>
-          </p>
-
+          <p class="project-note"><a class="project-link" href="https://jayebeardwts.github.io/bark-and-bloom-grooming/" target="_blank" rel="noopener noreferrer">View live project &rarr;</a></p>
         </article>
-
       </div>
-
     </section>
 
-    <!-- SKILLS -->
-
-    <section
-      class="section skills-section"
-      id="skills"
-      aria-labelledby="skills-title"
-    >
-
+    <section class="section skills-section" id="skills" aria-labelledby="skills-title">
       <div>
-
-        <p class="eyebrow">
-          CAPABILITIES
-        </p>
-
-        <h2 id="skills-title">
-          The work I enjoy doing
-        </h2>
-
+        <p class="eyebrow">CAPABILITIES</p>
+        <h2 id="skills-title">The work I enjoy doing</h2>
       </div>
-
       <div class="skill-list">
-
         <article>
-
-          <h3>
-            E-Commerce Operations
-          </h3>
-
-          <p>
-            Shopify storefronts, catalog upkeep, product
-            merchandising, inventory, Amazon FBA, promotions,
-            customer experience, and day-to-day troubleshooting.
-          </p>
-
+          <h3>E-Commerce Operations</h3>
+          <p>Shopify storefronts, catalog upkeep, product merchandising, inventory, Amazon FBA, promotions, customer experience, and day-to-day troubleshooting.</p>
         </article>
-
         <article>
-
-          <h3>
-            Shopify &amp; Web Systems
-          </h3>
-
-          <p>
-            Liquid, HTML/CSS, theme and content updates,
-            metafields, responsive layouts, site QA, and
-            improving how storefront information is organized.
-          </p>
-
+          <h3>Shopify &amp; Web Systems</h3>
+          <p>Liquid, HTML/CSS, theme and content updates, metafields, responsive layouts, site QA, and improving how storefront information is organized.</p>
         </article>
-
         <article>
-
-          <h3>
-            AI Workflow &amp; Automation Projects
-          </h3>
-
-          <p>
-            Designing and testing AI-assisted processes,
-            connecting Shopify and ClickUp in a development
-            environment, checking outputs, documenting workflows,
-            and keeping human approval in the loop.
-          </p>
-
+          <h3>AI-Assisted Workflows &amp; Human Review</h3>
+          <p>Designing and testing workflows for book metadata, product copy, evidence review, and controlled approval; translating operational problems into usable software with Codex assistance.</p>
         </article>
-
         <article>
-
-          <h3>
-            Digital Operations &amp; Coordination
-          </h3>
-
-          <p>
-            Organizing tasks, maintaining accurate records,
-            coordinating across tools and people, tracking issues,
-            and finding practical ways to make recurring work
-            more manageable.
-          </p>
-
+          <h3>Digital Operations &amp; Coordination</h3>
+          <p>Organizing tasks, maintaining accurate records, coordinating across tools and people, documenting processes, tracking issues, and making recurring work more manageable.</p>
         </article>
-
       </div>
-
     </section>
 
-    <!-- ABOUT -->
-
-    <section
-      class="section about"
-      id="about"
-      aria-labelledby="about-title"
-    >
-
-      <p class="eyebrow">
-        ABOUT
-      </p>
-
-      <h2 id="about-title">
-        I like making the pieces work together.
-      </h2>
-
+    <section class="section about" id="about" aria-labelledby="about-title">
+      <p class="eyebrow">ABOUT</p>
+      <h2 id="about-title">I like making the pieces work together.</h2>
       <p class="about-copy">
-        My background is in e-commerce operations, and I've
-        always enjoyed the behind-the-scenes work: organizing
-        products, improving websites, solving problems, and
-        making sure the details don't get lost between systems.
+        My background is in e-commerce operations, and I've always enjoyed the
+        behind-the-scenes work: organizing products, improving websites, solving
+        problems, and making sure the details don't get lost between systems.
       </p>
-
       <p class="about-copy">
-        Recently, I've been building on that experience by
-        experimenting with AI-assisted workflows.
-
-        I'm interested in how these tools can help people do
-        everyday work more efficiently while keeping the process
-        clear and reviewable.
+        Verity builds on that experience. I'm interested in using AI and
+        well-designed workflows to help people handle complex routine work more
+        clearly, with human oversight where it matters.
       </p>
-
       <p class="about-copy">
-        I'm exploring e-commerce systems, Shopify operations,
-        digital operations, workflow automation, and technical
-        implementation roles in Los Angeles and California-eligible
-        remote teams.
+        I'm exploring e-commerce systems, Shopify operations, digital operations,
+        AI-assisted workflow coordination, and technical implementation roles in
+        Los Angeles and California-eligible remote teams.
       </p>
-
-      <a
-        class="project-link"
-        href="mailto:jaye.beard@whatthesleuth.com"
-      >
-        jaye.beard@whatthesleuth.com &rarr;
-      </a>
-
+      <a class="project-link" href="mailto:jaye.beard@whatthesleuth.com">jaye.beard@whatthesleuth.com &rarr;</a>
     </section>
-
   </main>
 
-  <!-- FOOTER -->
-
   <footer>
-
-    <span>
-      &copy; 2026 Jaye Beard
-    </span>
-
-    <a
-      href="https://github.com/jayebeardwts"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      GitHub
-    </a>
-
+    <span>&copy; 2026 Jaye Beard</span>
+    <a href="https://github.com/jayebeardwts" target="_blank" rel="noopener noreferrer">GitHub</a>
   </footer>
 
-  <!-- Open the case study when linked from the introduction. -->
-
+  <!-- The hero link opens its case study before scrolling. -->
   <script>
     (function () {
       var link = document.getElementById('case-study-jump');
       var details = document.getElementById('ai-case-study');
-
       if (link && details) {
-        link.addEventListener('click', function () {
-          details.open = true;
-        });
+        link.addEventListener('click', function () { details.open = true; });
       }
-
-      if (
-        window.location.hash === '#ai-case-study' &&
-        details
-      ) {
+      if (window.location.hash === '#ai-case-study' && details) {
         details.open = true;
       }
     })();
   </script>
-
 </body>
 </html>
